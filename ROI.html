@@ -49,7 +49,7 @@
             <label for="waterUsage">Water Usage per Guest Night (liters)</label>
             <select class="form-control" id="waterUsage" onchange="updateROI()">
                 <option value="800">5 Star Hotel: 800 liters</option>
-                <option value="600">4 Star Hotel: 600 liters</option>
+                <option value="600" selected>4 Star Hotel: 600 liters</option>
                 <option value="400">3 Star Hotel: 400 liters</option>
                 <option value="300">2 Star Hotel: 300 liters</option>
                 <option value="200">1 Star Hotel: 200 liters</option>
@@ -59,21 +59,21 @@
             <label for="guestNights">Guest Nights per Room per Year</label>
             <select class="form-control" id="guestNights" onchange="updateROI()">
                 <option value="365">High Occupancy: 365</option>
-                <option value="300">Medium Occupancy: 300</option>
+                <option value="300" selected>Medium Occupancy: 300</option>
                 <option value="200">Low Occupancy: 200</option>
                 <option value="100">Very Low Occupancy: 100</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="investmentCost">Investment Cost (€)</label>
+            <label for="investmentCost">Investment Cost (USD)</label>
             <select class="form-control" id="investmentCost" onchange="updateROI()">
                 <option value="200">200</option>
-                <option value="300">300</option>
+                <option value="300" selected>300</option>
                 <option value="400">400</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="serviceCost">Yearly Service Cost (€)</label>
+            <label for="serviceCost">Yearly Service Cost (USD)</label>
             <select class="form-control" id="serviceCost" onchange="updateROI()">
                 <option value="70">70</option>
                 <option value="100">100</option>
@@ -104,7 +104,7 @@
         // Calculate yearly water usage per room
         const yearlyWaterUsagePerRoom = waterUsageInCubicMeters * guestNights;
 
-        // Calculate yearly savings in €
+        // Calculate yearly savings in USD
         const yearlySavingsPerRoom = (savings / 100) * waterPrice * yearlyWaterUsagePerRoom;
 
         // Calculate ROI in years
