@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI Calculator</title>
+    <title>Wattery Project</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
@@ -20,106 +20,125 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <h1 class="text-center">ROI Calculator</h1>
-    <form>
-        <div class="form-group">
-            <label for="savings">Savings in %</label>
-            <input type="range" class="form-control-range" id="savings" min="5" max="40" step="5" value="5" oninput="updateROI()">
-            <span id="savingsValue">5%</span>
+    <div id="menu"></div>
+    <div id="header"></div>
+    <div class="container">
+        <h1 class="text-center">ROI Calculator</h1>
+        <form>
+            <div class="form-group">
+                <label for="savings">Savings in %</label>
+                <input type="range" class="form-control-range" id="savings" min="5" max="40" step="5" value="5" oninput="updateROI()">
+                <span id="savingsValue">5%</span>
+            </div>
+            <div class="form-group">
+                <label for="waterPrice">Water Price (USD per m³)</label>
+                <select class="form-control" id="waterPrice" onchange="updateROI()">
+                    <option value="10.67">Aruba: 10.67</option>
+                    <option value="5.25">Germany: 4.50-6.00</option>
+                    <option value="9.32">Denmark: 9.32</option>
+                    <option value="8.43">Netherlands: 8.43</option>
+                    <option value="3.50">Australia: 3-4</option>
+                    <option value="3.75">UK: 3.00-4.50</option>
+                    <option value="3.25">USA (California): 3.25</option>
+                    <option value="3.25">USA (West Virginia): 3.25</option>
+                    <option value="2.50">Canada: 2.00-3.00</option>
+                    <option value="2.30">Sweden: 2.30</option>
+                    <option value="2.25">Finland: 2.25</option>
+                    <option value="2.00">France: 1.50-2.50</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="waterUsage">Water Usage per Guest Night (liters)</label>
+                <select class="form-control" id="waterUsage" onchange="updateROI()">
+                    <option value="800">5 Star Hotel: 800 liters</option>
+                    <option value="600" selected>4 Star Hotel: 600 liters</option>
+                    <option value="400">3 Star Hotel: 400 liters</option>
+                    <option value="300">2 Star Hotel: 300 liters</option>
+                    <option value="200">1 Star Hotel: 200 liters</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="guestNights">Guest Nights per Room per Year</label>
+                <select class="form-control" id="guestNights" onchange="updateROI()">
+                    <option value="365">High Occupancy: 365</option>
+                    <option value="300" selected>Medium Occupancy: 300</option>
+                    <option value="200">Low Occupancy: 200</option>
+                    <option value="100">Very Low Occupancy: 100</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="investmentCost">Investment Cost (USD)</label>
+                <select class="form-control" id="investmentCost" onchange="updateROI()">
+                    <option value="200">200</option>
+                    <option value="300" selected>300</option>
+                    <option value="400">400</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="serviceCost">Yearly Service Cost (USD)</label>
+                <select class="form-control" id="serviceCost" onchange="updateROI()">
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="120">120</option>
+                </select>
+            </div>
+        </form>
+        <div class="result">
+            <h3>ROI: <span id="roi">0</span> years</h3>
         </div>
-        <div class="form-group">
-            <label for="waterPrice">Water Price (USD per m³)</label>
-            <select class="form-control" id="waterPrice" onchange="updateROI()">
-                <option value="10.67">Aruba: 10.67</option>
-                <option value="5.25">Germany: 4.50-6.00</option>
-                <option value="9.32">Denmark: 9.32</option>
-                <option value="8.43">Netherlands: 8.43</option>
-                <option value="3.50">Australia: 3-4</option>
-                <option value="3.75">UK: 3.00-4.50</option>
-                <option value="3.25">USA (California): 3.25</option>
-                <option value="3.25">USA (West Virginia): 3.25</option>
-                <option value="2.50">Canada: 2.00-3.00</option>
-                <option value="2.30">Sweden: 2.30</option>
-                <option value="2.25">Finland: 2.25</option>
-                <option value="2.00">France: 1.50-2.50</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="waterUsage">Water Usage per Guest Night (liters)</label>
-            <select class="form-control" id="waterUsage" onchange="updateROI()">
-                <option value="800">5 Star Hotel: 800 liters</option>
-                <option value="600" selected>4 Star Hotel: 600 liters</option>
-                <option value="400">3 Star Hotel: 400 liters</option>
-                <option value="300">2 Star Hotel: 300 liters</option>
-                <option value="200">1 Star Hotel: 200 liters</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="guestNights">Guest Nights per Room per Year</label>
-            <select class="form-control" id="guestNights" onchange="updateROI()">
-                <option value="365">High Occupancy: 365</option>
-                <option value="300" selected>Medium Occupancy: 300</option>
-                <option value="200">Low Occupancy: 200</option>
-                <option value="100">Very Low Occupancy: 100</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="investmentCost">Investment Cost (USD)</label>
-            <select class="form-control" id="investmentCost" onchange="updateROI()">
-                <option value="200">200</option>
-                <option value="300" selected>300</option>
-                <option value="400">400</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="serviceCost">Yearly Service Cost (USD)</label>
-            <select class="form-control" id="serviceCost" onchange="updateROI()">
-                <option value="70">70</option>
-                <option value="100">100</option>
-                <option value="120">120</option>
-            </select>
-        </div>
-    </form>
-    <div class="result">
-        <h3>ROI: <span id="roi">0</span> years</h3>
     </div>
-</div>
+    <div id="footer"></div>
 
-<script>
-    function updateROI() {
-        const savings = document.getElementById('savings').value;
-        const waterPrice = document.getElementById('waterPrice').value;
-        const waterUsage = document.getElementById('waterUsage').value;
-        const guestNights = document.getElementById('guestNights').value;
-        const investmentCost = document.getElementById('investmentCost').value;
-        const serviceCost = document.getElementById('serviceCost').value;
-        
-        // Display the current savings value
-        document.getElementById('savingsValue').innerText = savings + '%';
+    <script>
+        function updateROI() {
+            const savings = document.getElementById('savings').value;
+            const waterPrice = document.getElementById('waterPrice').value;
+            const waterUsage = document.getElementById('waterUsage').value;
+            const guestNights = document.getElementById('guestNights').value;
+            const investmentCost = document.getElementById('investmentCost').value;
+            const serviceCost = document.getElementById('serviceCost').value;
+            
+            // Display the current savings value
+            document.getElementById('savingsValue').innerText = savings + '%';
 
-        // Convert water usage from liters to cubic meters
-        const waterUsageInCubicMeters = waterUsage / 1000;
+            // Convert water usage from liters to cubic meters
+            const waterUsageInCubicMeters = waterUsage / 1000;
 
-        // Calculate yearly water usage per room
-        const yearlyWaterUsagePerRoom = waterUsageInCubicMeters * guestNights;
+            // Calculate yearly water usage per room
+            const yearlyWaterUsagePerRoom = waterUsageInCubicMeters * guestNights;
 
-        // Calculate yearly savings in USD
-        const yearlySavingsPerRoom = (savings / 100) * waterPrice * yearlyWaterUsagePerRoom;
+            // Calculate yearly savings in USD
+            const yearlySavingsPerRoom = (savings / 100) * waterPrice * yearlyWaterUsagePerRoom;
 
-        // Calculate ROI in years
-        const totalCost = parseFloat(investmentCost) + parseFloat(serviceCost);
-        const roi = totalCost / yearlySavingsPerRoom;
+            // Calculate ROI in years
+            const totalCost = parseFloat(investmentCost) + parseFloat(serviceCost);
+            const roi = totalCost / yearlySavingsPerRoom;
 
-        // Update the ROI display
-        document.getElementById('roi').innerText = roi.toFixed(2);
-    }
+            // Update the ROI display
+            document.getElementById('roi').innerText = roi.toFixed(2);
+        }
 
-    // Initial calculation
-    updateROI();
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        // Initial calculation
+        updateROI();
+
+        // Load external HTML components
+        function loadHTML(id, url) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById(id).innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        loadHTML("menu", "menu.html");
+        loadHTML("header", "header.html");
+        loadHTML("footer", "footer.html");
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
