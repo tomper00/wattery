@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wattery Project</title>
+    <script src="./common.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
@@ -120,22 +121,6 @@
 
         // Initial calculation
         updateROI();
-
-        // Load external HTML components
-        function loadHTML(id, url) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById(id).innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", url, true);
-            xhttp.send();
-        }
-
-        loadHTML("menu", "menu.html");
-        loadHTML("header", "header.html");
-        loadHTML("footer", "footer.html");
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
