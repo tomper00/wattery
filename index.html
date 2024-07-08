@@ -85,11 +85,22 @@
         }
         #hero  .container {
             top: 140px;
+            position: relative;
             background: #80808099;
             width: 400px;
             padding: 20px;
             height: 200px;
             border-radius: 5px;
+        }
+        #hero ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #hero .card {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #80808099;
         }
     </style>
 </head>
@@ -190,16 +201,28 @@
                 <h3>Install options</h3>
                 <div class="row">
                     <div class="col-md-4">
-                        <h3>Own</h3>
-                        <p>Pay up front, save money now!</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Own</h5>
+                                <p class="card-text">Pay up front, save money now!</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
-                        <h3>Rent</h3>
-                        <p>Pay per guestnight</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Rent</h5>
+                                <p class="card-text">Pay per guestnight</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
-                        <h3>Share savings</h3>
-                        <p>Pay back based on savings</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Share savings</h5>
+                                <p class="card-text">Pay back based on savings</p>
+                            </div>
+                        </div>
                     </div>
                 </div>   
             </div>
