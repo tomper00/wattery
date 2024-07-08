@@ -12,5 +12,5 @@
         }
 
         loadHTML("menu", "menu.html");
-        loadHTML("header", "header.html");
+        //loadHTML("header", "header.html");
         loadHTML("footer", "footer.html");
