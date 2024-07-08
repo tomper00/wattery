@@ -18,6 +18,32 @@
             padding: 20px;
             border-radius: 5px;
         }
+        #nudging {
+            position: relative;
+            overflow: hidden;
+            height: 100vh; /* Adjust based on your design */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        #nudging video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+        #nudging .content {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -25,6 +51,23 @@
     <div id="menu"></div>
     <div id="header" class="hero-bg"></div>
     <!-- Features Section -->
+    <section id="nudging">
+        <video autoplay muted loop>
+            <source src="video/iStock-544073220.mov" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="content">
+            <div class="container">
+                <h2>Smart Nudging</h2>
+                <p>Wattery nudges guests to use less water by providing real-time feedback on their water usage. This feedback can be delivered in a variety of ways, such as:</p>
+                <ul>
+                    <li>Displaying water usage data on in-room tablets</li>
+                    <li>Providing guests with a daily water usage report</li>
+                    <li>Offering rewards for reducing water usage</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section id="features" class="py-5">
         <div class="container">
             <div class="row">
