@@ -91,7 +91,6 @@
         font-size: small;
     }
     #counter .background-video {
-        display: none;
         left: 20%;
     }
 }
