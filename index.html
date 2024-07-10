@@ -24,11 +24,11 @@
         </header>
     </div>
     <section id="counter">
+        <video autoplay muted loop class="background-video">
+            <source src="video/iStock-544073220.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
         <div class="content tablet">
-            <video autoplay muted loop class="background-video">
-                <source src="video/iStock-544073220.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
             <div class="container">
                 <h2>Water Usage Today</h2>
                 <div class="counter-display">
@@ -37,7 +37,33 @@
                 <p class="description">Expected water usage for a top placement amongst guests: <strong>120.0 - 150.0 liters</strong>. Increase your chances of winning a prize by conserving water!</p>
             </div>
         </div>
-    </section>   
+    </section>  
+    <script>
+            const counterElement = document.getElementById("counterdigits");
+    let count = 101.0;
+    let interval = 300; // Start with 0.3 seconds
+    let decrement = 50; // Decrease interval by 50ms each step
+
+    function updateCounter() {
+        count += 0.1;
+        if (count >= 200.0) {
+            count = 101.0;
+            interval = 300; // Reset interval when restarting
+        }
+        counterElement.textContent = count.toFixed(1);
+
+        // Decrease the interval to speed up the counter
+        if (interval > 100) { // Set a minimum interval limit
+            interval -= decrement;
+        }
+
+        // Schedule the next update
+        setTimeout(updateCounter, interval);
+    }
+
+    // Start the counter
+    setTimeout(updateCounter, interval);
+    </script> 
     <section id="watt">
         <div class="content">
             <div class="container">
