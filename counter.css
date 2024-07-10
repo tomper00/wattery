@@ -25,6 +25,7 @@
     padding: 20px;
     max-width: 400px;
     border: 16px solid #333;
+    margin-top: 110px;
 }
 
 #counter .content:before {
@@ -74,4 +75,22 @@
 .description {
     font-size: 1rem;
     color: #333;
+}
+
+@media (max-width: 768px) {
+    #counter .content {
+        margin-top: 20px;
+        max-width: min-content;
+        font-size: medium
+    }
+    #counter h2 {
+        font-size: large;
+    }
+    #counter .description {
+        font-size: small;
+    }
+    #counter .background-video {
+        display: none;
+        left: 20%;
+    }
 }
