@@ -1,6 +1,7 @@
 #counter {
     position: relative;
     overflow: hidden;
+    height: 400px;
 }
 
 #counter .background-video {
