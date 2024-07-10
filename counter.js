@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const counterElement = document.getElementById("counterdigits");
     let count = 101.0;
-    let interval = 3000; // Start with 3 seconds
+    let interval = 300; // Start with 0.3 seconds
     let decrement = 50; // Decrease interval by 50ms each step
 
     function updateCounter() {
