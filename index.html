@@ -18,8 +18,9 @@
             height: 700px;
         }
         .hero-bg .container {
-            background: #80808099;
-            width: 600px;
+            background: rgba(128, 128, 128, 0.6);
+            width: 100%;
+            max-width: 600px;
             padding: 20px;
             border-radius: 5px;
         }
@@ -48,8 +49,9 @@
         #nudging .content {
             position: relative;
             z-index: 8;
-            background: #80808099;
-            width: 250px;
+            background: rgba(128, 128, 128, 0.6);
+            width: 100%;
+            max-width: 250px;
             border-radius: 5px;
         }
         #nudging .overlay-video {
@@ -64,16 +66,12 @@
             background-size: cover;
             color: white;
             height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #watt .content {
-            left: 20%;
-            position: absolute;
-        }
-        #watt .container {
-            height: 150px;
-            top: 100px;
-            position: relative;
-            background: #80808099;
+            background: rgba(128, 128, 128, 0.6);
             padding: 20px;
             border-radius: 5px;
         }
@@ -82,17 +80,16 @@
             background-size: cover;
             color: white;
             height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #hero .container {
-            top: 140px;
-            position: relative;
-            background: #80808099;
-            width: 400px;
+            background: rgba(128, 128, 128, 0.6);
             padding: 20px;
-            height: 200px;
             border-radius: 5px;
         }
-        #princing {
+        #pricing {
             background: #207e75;
             color: black;
             padding: 20px;
@@ -105,7 +102,26 @@
             margin-top: 20px;
             padding: 10px;
             border-radius: 5px;
-            background: #80808099;
+            background: rgba(128, 128, 128, 0.6);
+        }
+        @media (max-width: 768px) {
+            .hero-bg {
+                height: auto;
+                padding: 60px 0;
+            }
+            #watt, #hero {
+                height: auto;
+                padding: 60px 0;
+            }
+            #nudging {
+                height: auto;
+                padding: 60px 0;
+                flex-direction: column;
+            }
+            #nudging .content {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -114,7 +130,7 @@
     <div id="menu"></div>
     <div id="header" class="hero-bg">
         <header class="text-white text-center py-5">
-            <div class="container ">
+            <div class="container">
                 <h1>Welcome to the Wattery Project</h1>
                 <p class="lead">We save hotels money By EMPOWERING GUEST CONSERVATION behavior</p>
                 <p>Inspiring Sustainable Hospitality, One Guest at a Time</p>
