@@ -1,123 +1,199 @@
-        .content, #contact {
-            text-align: center;
-            padding: 20px;
-        }
-        .hero-bg {
-            background: url('./img/iStock-896068834.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            height: 700px;
-        }
-        .hero-bg .container {
-            background: rgba(128, 128, 128, 0.6);
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        #nudging {
-            position: relative;
-            overflow: hidden;
-            height: 70vh; /* Adjust based on your design */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        #nudging video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-            background-size: cover;
-        }
-        #nudging .content {
-            position: relative;
-            z-index: 8;
-            background: rgba(128, 128, 128, 0.6);
-            width: 100%;
-            max-width: 250px;
-            border-radius: 5px;
-        }
-        #nudging .overlay-video {
-            position: absolute;
-            bottom: 20px;
-            left: 10%;
-            height: 30px;
-            z-index: 2;
-        }
-        #watt {
-            background: url('./img/iStock-1002456080.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #watt .content {
-            background: rgba(128, 128, 128, 0.6);
-            padding: 20px;
-            border-radius: 5px;
-        }
-        #hero {
-            background: url('./img/istockphoto-1455431483-2048x2048.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #hero .container {
-            background: rgba(128, 128, 128, 0.6);
-            padding: 20px;
-            border-radius: 5px;
-        }
-        #pricing {
-            background: #207e75;
-            color: black;
-            padding: 20px;
-        }
-        #pricing ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        #pricing .card {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background: rgba(128, 128, 128, 0.6);
-        }
-        @media (max-width: 768px) {
-            .hero-bg {
-                height: auto;
-                padding: 60px 0;
-            }
-            #watt, #hero {
-                height: auto;
-                padding: 60px 0;
-            }
-            #nudging {
-                height: auto;
-                padding: 0;
-                flex-direction: column;
-                height: 350px;
-            }
-            #nudging h2 {
-                font-size: medium;
-            }
-            #nudging .content {
-                max-width: 100%;
-                /* margin-bottom: 20px; */
-                top: -130px;
-                height: 95px;
-                font-size: small;
-            }
-        }
+.content,
+#contact {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-bg {
+    background: url('./img/iStock-896068834.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 700px;
+}
+
+.hero-bg .container {
+    background: rgba(128, 128, 128, 0.6);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#nudging {
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+    /* Adjust based on your design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+#nudging video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+#nudging .content {
+    position: relative;
+    z-index: 8;
+    background: rgba(128, 128, 128, 0.6);
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+#nudging .overlay-video {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    height: 30px;
+    z-index: 2;
+}
+
+#watt {
+    background: url('./img/iStock-1002456080.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#watt .content {
+    background: rgba(128, 128, 128, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#hero {
+    background: url('./img/istockphoto-1455431483-2048x2048.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero .container {
+    background: rgba(128, 128, 128, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#pricing {
+    background: #207e75;
+    color: black;
+    padding: 20px;
+}
+
+#pricing ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pricing .card {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.6);
+}
+
+#counter .content {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+    border: 16px solid #333;
+}
+
+#counter .content:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 50px;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+#counter .content:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 50px;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+#counter h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.counter-display {
+    background: #000;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#counterdigits {
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    #watt,
+    #hero {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    #nudging {
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        height: 350px;
+    }
+
+    #nudging h2 {
+        font-size: medium;
+    }
+
+    #nudging .content {
+        max-width: 100%;
+        /* margin-bottom: 20px; */
+        top: -130px;
+        height: 95px;
+        font-size: small;
+    }
+}
