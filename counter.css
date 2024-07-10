@@ -1,7 +1,7 @@
 #counter {
     position: relative;
     overflow: hidden;
-    height: 400px;
+    height: 600px;
 }
 
 #counter .background-video {
@@ -27,6 +27,7 @@
     max-width: 400px;
     border: 16px solid #333;
     margin-top: 110px;
+    margin-left: 10%;
 }
 
 #counter .content:before {
@@ -82,7 +83,9 @@
     #counter .content {
         margin-top: 20px;
         max-width: min-content;
-        font-size: medium
+        font-size: medium;
+        margin-left: 0;
+
     }
     #counter h2 {
         font-size: large;
