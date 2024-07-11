@@ -1,3 +1,9 @@
+/* counter.css */
+@font-face {
+    font-family: 'Digital-7';
+    src: url('fonts/digital-7.ttf') format('truetype');
+}
+
 #counter {
     position: relative;
     overflow: hidden;
@@ -55,6 +61,7 @@
     border-radius: 5px;
     transform: translateX(-50%);
 }
+
 #counter h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -68,8 +75,8 @@
     height: 60px;
     width: 600px;
     border-radius: 5px;
-
 }
+
 #counter h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -85,12 +92,19 @@
 .counter {
     font-size: 3rem;
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Digital-7', 'Courier New', Courier, monospace;
 }
 
 .description {
     font-size: 1rem;
     color: #333;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 @media (max-width: 768px) {
@@ -99,7 +113,6 @@
         max-width: min-content;
         font-size: medium;
         margin-left: 0;
-
     }
     #counter h3 {
         font-size: large;

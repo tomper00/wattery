@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="./common.js"></script>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="counter.css">
 
 </head>
+
 <body>
     <!-- Navigation -->
     <div id="menu"></div>
@@ -24,51 +26,55 @@
         </header>
     </div>
     <section id="counter">
-        <h2>Nudge your guests towards a sustanable behaviur</h2>
+        <h2>Nudge your guests towards a sustainable behavior</h2>
         <video autoplay muted loop class="background-video">
             <source src="video/iStock-544073220.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
         <div class="content tablet">
             <div class="container">
-                <h3>Your water usage today</h3>
-                <div class="counter-display">
-                    <div class="counter" id="counterdigits">101.0</div>
-                    <p style="color:#FFF; line-height: 0%; margin:0">liters</p>
-                </div>
-                <div class="description">
-                    <p>Consume below: <strong style="color: green;">150.0 liters</strong> today</p> 
-                    <p>to increase your chances of winning a price. <button>Read more</button></p>
+                <div class="water">
+                    <h3><img src="icons/water.svg" alt="Water Icon" class="icon"> Your water usage today</h3>
+                    <div class="counter-display">
+                        <div class="counter" id="counterdigits">101.0</div>
+                        <span style="color:#FFF; line-height: 0%; margin:0">liters</span >
+                    </div>
+                    <div class="description">
+                        <p>Consume below: <strong style="color: green;">150.0 liters</strong> today</p>
+                        <p>to increase your chances of winning a prize. <button>Read more</button></p>
+                    </div>
+                    <p>95/200 Room rank</p>
+                    <p>200 <span style="font-size: small;">liters</span>HOTEL DAY AVG</p>
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
     <script>
-            const counterElement = document.getElementById("counterdigits");
-    let count = 101.0;
-    let interval = 300; // Start with 0.3 seconds
-    let decrement = 50; // Decrease interval by 50ms each step
+        const counterElement = document.getElementById("counterdigits");
+        let count = 101.0;
+        let interval = 300; // Start with 0.3 seconds
+        let decrement = 50; // Decrease interval by 50ms each step
 
-    function updateCounter() {
-        count += 0.1;
-        if (count >= 200.0) {
-            count = 101.0;
-            interval = 300; // Reset interval when restarting
+        function updateCounter() {
+            count += 0.1;
+            if (count >= 200.0) {
+                count = 101.0;
+                interval = 300; // Reset interval when restarting
+            }
+            counterElement.textContent = count.toFixed(1);
+
+            // Decrease the interval to speed up the counter
+            if (interval > 100) { // Set a minimum interval limit
+                interval -= decrement;
+            }
+
+            // Schedule the next update
+            setTimeout(updateCounter, interval);
         }
-        counterElement.textContent = count.toFixed(1);
 
-        // Decrease the interval to speed up the counter
-        if (interval > 100) { // Set a minimum interval limit
-            interval -= decrement;
-        }
-
-        // Schedule the next update
+        // Start the counter
         setTimeout(updateCounter, interval);
-    }
-
-    // Start the counter
-    setTimeout(updateCounter, interval);
-    </script> 
+    </script>
     <section id="watt">
         <div class="content">
             <div class="container">
@@ -92,7 +98,8 @@
                             <!-- Background circle with gray border -->
                             <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
                             <!-- Foreground circle with orange border representing 15% -->
-                            <path d="M100,10 A90,90 0 0,1 182.63,117.37" stroke="orange" stroke-width="10" fill="none" />
+                            <path d="M100,10 A90,90 0 0,1 182.63,117.37" stroke="orange" stroke-width="10"
+                                fill="none" />
                             <!-- Text displaying 15% in white in the middle -->
                             <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">15%</text>
                         </svg>
@@ -105,16 +112,17 @@
                             <!-- Background circle with gray border -->
                             <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
                             <!-- Foreground circle with orange border representing 22% -->
-                            <path d="M100,10 A90,90 0 0,1 185.93,137.05" stroke="orange" stroke-width="10" fill="none" />
+                            <path d="M100,10 A90,90 0 0,1 185.93,137.05" stroke="orange" stroke-width="10"
+                                fill="none" />
                             <!-- Text displaying 22% in white in the middle -->
                             <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">22%</text>
                         </svg>
                         <p>Savings this month: <span>708 $</span></p>
 
-                 </div>
+                    </div>
                 </div>
-            
-        </div>
+
+            </div>
     </section>
     <section id="hero">
         <div class="content">
@@ -159,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                </div>   
+                </div>
             </div>
         </div>
     </section>
@@ -179,4 +187,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="counter.js"></script>
 </body>
+
 </html>
