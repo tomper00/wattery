@@ -21,10 +21,13 @@
 .logo {
     width: 100px;
     height: 100px;
-    margin: -10px 0 0 0;
+    margin: -25px 0 0 0;
     display: block;
 }
+.navbar-nav {
+    margin-top: 10px;
 
+}
 #nudging {
     position: relative;
     overflow: hidden;
