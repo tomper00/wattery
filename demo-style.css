@@ -1,0 +1,31 @@
+/* style.css */
+body {
+    font-size: 0.875rem;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.sidebar {
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}

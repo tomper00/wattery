@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Water Usage Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="demo-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Administration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Alarms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Hotel Water Usage Dashboard</h1>
+                </div>
+
+                <div class="row">
+                    <!-- Widget: Room Outliers -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Room Outliers</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul id="room-outliers" class="list-group list-group-flush">
+                                    <!-- List of rooms that are outliers -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Total Savings -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Total Savings</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">0% <small class="text-muted">compared to initial usage</small></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Top 10 Rooms -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Top 10 Rooms</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul id="top-10-rooms" class="list-group list-group-flush">
+                                    <!-- List of top 10 rooms with least usage -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Water Usage Over Time Chart -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Water Usage Over Time</h4>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="waterUsageChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="demo-script.js"></script>
+</body>
+</html>
