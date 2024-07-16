@@ -121,17 +121,18 @@ body {
     color: #fff;
     font-family: 'Orbitron', 'Courier New', Courier, monospace;
     letter-spacing: 0.1em; /* Ensure consistent spacing */
-    text-align: center; /* Center align the text */
+    text-align: left; 
     display: flex;
     justify-content: center;
-    --num: 0;
+    --num: 001010;
     counter-reset: num var(--num);
     transition: --num 1s;
 }
 
 .counter::after {
-    content: counter(num);
+    content: counter(num, decimal);
 }
+
 
 .description {
     font-size: 1rem;
