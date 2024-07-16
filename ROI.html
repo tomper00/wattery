@@ -10,7 +10,7 @@
 
     <style>
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin-top: 50px;
         }
         .result {
@@ -20,44 +20,107 @@
             display: block;
             margin-top: 10px;
         }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .card-body {
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .pricing-card-title {
+            font-size: 2.5rem;
+            color: #28a745;
+        }
+        .text-muted {
+            color: #6c757d !important;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        .section-title p {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        .bg-light-blue {
+            background-color: #e9faff;
+        }
+        .bg-light-green {
+            background-color: #eafff1;
+        }
     </style>
 </head>
 <body>
     <div id="menu"></div>
     <div id="header"></div>
-    <section id="pricing">
-        <div class="content">
-            <div class="container">
-                <h2>Customer fees</h2>
-                <p>We will approach customrs with different models</p>
-                <ul>
-                    <li>Install: 500$ / room</li>
-                    <li>Yearly: 50$ / room</li>
-                </ul>
-                <h3>Install options</h3>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Own</h5>
-                                <p class="card-text">Pay up front, save money now!</p>
-                            </div>
+    <section id="pricing" class="bg-light-blue py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Fees</h2>
+                <p>We offer different models to suit your needs</p>
+            </div>
+            <ul>
+                <li>Install: $500 / room</li>
+                <li>Yearly: $50 / room</li>
+            </ul>
+            <h3>Install Options</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="my-0 fw-normal">Own</h5>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="pricing-card-title">$500</h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Pay up front</li>
+                                <li>Save money now!</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Get Started</button>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Rent</h5>
-                                <p class="card-text">Pay per guestnight</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="my-0 fw-normal">Rent</h5>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="pricing-card-title">$50 <small class="text-muted">/ guest night</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Pay per guest night</li>
+                                <li>Flexible payment</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Get Started</button>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Share savings</h5>
-                                <p class="card-text">Pay back based on savings</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="my-0 fw-normal">Share Savings</h5>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="pricing-card-title">Variable</h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Pay back based on savings</li>
+                                <li>Performance-based</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Get Started</button>
                         </div>
                     </div>
                 </div>
@@ -65,71 +128,73 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <div class="container">
-        <h1 class="text-center">ROI Calculator</h1>
-        <form>
-            <div class="form-group">
-                <label for="savings">Savings in %</label>
-                <input type="range" class="form-control-range" id="savings" min="5" max="40" step="5" value="5" oninput="updateROI()">
-                <span id="savingsValue">5%</span>
+    <section class="bg-light-green py-5">
+        <div class="container">
+            <h1 class="text-center">ROI Calculator</h1>
+            <form>
+                <div class="form-group">
+                    <label for="savings">Savings in %</label>
+                    <input type="range" class="form-control-range" id="savings" min="5" max="40" step="5" value="5" oninput="updateROI()">
+                    <span id="savingsValue">5%</span>
+                </div>
+                <div class="form-group">
+                    <label for="waterPrice">Water Price (USD per m³)</label>
+                    <select class="form-control" id="waterPrice" onchange="updateROI()">
+                        <option value="10.67">Aruba: 10.67</option>
+                        <option value="5.25">Germany: 4.50-6.00</option>
+                        <option value="9.32">Denmark: 9.32</option>
+                        <option value="8.43">Netherlands: 8.43</option>
+                        <option value="3.50">Australia: 3-4</option>
+                        <option value="3.75">UK: 3.00-4.50</option>
+                        <option value="3.25">USA (California): 3.25</option>
+                        <option value="3.25">USA (West Virginia): 3.25</option>
+                        <option value="2.50">Canada: 2.00-3.00</option>
+                        <option value="2.30">Sweden: 2.30</option>
+                        <option value="2.25">Finland: 2.25</option>
+                        <option value="2.00">France: 1.50-2.50</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="waterUsage">Water Usage per Guest Night (liters)</label>
+                    <select class="form-control" id="waterUsage" onchange="updateROI()">
+                        <option value="800">5 Star Hotel: 800 liters</option>
+                        <option value="600" selected>4 Star Hotel: 600 liters</option>
+                        <option value="400">3 Star Hotel: 400 liters</option>
+                        <option value="300">2 Star Hotel: 300 liters</option>
+                        <option value="200">1 Star Hotel: 200 liters</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guestNights">Guest Nights per Room per Year</label>
+                    <select class="form-control" id="guestNights" onchange="updateROI()">
+                        <option value="365">High Occupancy: 365</option>
+                        <option value="300" selected>Medium Occupancy: 300</option>
+                        <option value="200">Low Occupancy: 200</option>
+                        <option value="100">Very Low Occupancy: 100</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="investmentCost">Investment Cost (USD)</label>
+                    <select class="form-control" id="investmentCost" onchange="updateROI()">
+                        <option value="200">200</option>
+                        <option value="300" selected>300</option>
+                        <option value="400">400</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="serviceCost">Yearly Service Cost (USD)</label>
+                    <select class="form-control" id="serviceCost" onchange="updateROI()">
+                        <option value="70">70</option>
+                        <option value="100">100</option>
+                        <option value="120">120</option>
+                    </select>
+                </div>
+            </form>
+            <div class="result">
+                <h3>ROI: <span id="roi">0</span> years</h3>
             </div>
-            <div class="form-group">
-                <label for="waterPrice">Water Price (USD per m³)</label>
-                <select class="form-control" id="waterPrice" onchange="updateROI()">
-                    <option value="10.67">Aruba: 10.67</option>
-                    <option value="5.25">Germany: 4.50-6.00</option>
-                    <option value="9.32">Denmark: 9.32</option>
-                    <option value="8.43">Netherlands: 8.43</option>
-                    <option value="3.50">Australia: 3-4</option>
-                    <option value="3.75">UK: 3.00-4.50</option>
-                    <option value="3.25">USA (California): 3.25</option>
-                    <option value="3.25">USA (West Virginia): 3.25</option>
-                    <option value="2.50">Canada: 2.00-3.00</option>
-                    <option value="2.30">Sweden: 2.30</option>
-                    <option value="2.25">Finland: 2.25</option>
-                    <option value="2.00">France: 1.50-2.50</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="waterUsage">Water Usage per Guest Night (liters)</label>
-                <select class="form-control" id="waterUsage" onchange="updateROI()">
-                    <option value="800">5 Star Hotel: 800 liters</option>
-                    <option value="600" selected>4 Star Hotel: 600 liters</option>
-                    <option value="400">3 Star Hotel: 400 liters</option>
-                    <option value="300">2 Star Hotel: 300 liters</option>
-                    <option value="200">1 Star Hotel: 200 liters</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="guestNights">Guest Nights per Room per Year</label>
-                <select class="form-control" id="guestNights" onchange="updateROI()">
-                    <option value="365">High Occupancy: 365</option>
-                    <option value="300" selected>Medium Occupancy: 300</option>
-                    <option value="200">Low Occupancy: 200</option>
-                    <option value="100">Very Low Occupancy: 100</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="investmentCost">Investment Cost (USD)</label>
-                <select class="form-control" id="investmentCost" onchange="updateROI()">
-                    <option value="200">200</option>
-                    <option value="300" selected>300</option>
-                    <option value="400">400</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="serviceCost">Yearly Service Cost (USD)</label>
-                <select class="form-control" id="serviceCost" onchange="updateROI()">
-                    <option value="70">70</option>
-                    <option value="100">100</option>
-                    <option value="120">120</option>
-                </select>
-            </div>
-        </form>
-        <div class="result">
-            <h3>ROI: <span id="roi">0</span> years</h3>
         </div>
-    </div>
+    </section>
     <div id="footer"></div>
 
     <script>
