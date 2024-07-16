@@ -30,6 +30,8 @@ body {
     position: relative;
     overflow: hidden;
     height: 600px;
+    font-family: 'Orbitron', 'Courier New', Courier, monospace;
+
 }
 
 #counter .background-video {
