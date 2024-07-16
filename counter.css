@@ -117,20 +117,13 @@ body {
 }
 
 .counter {
-    font-size: 1rem;
+    font-size: 3rem;
     color: #fff;
     font-family: 'Orbitron', 'Courier New', Courier, monospace;
     letter-spacing: 0.1em; /* Ensure consistent spacing */
     text-align: left; /* Align the text to the left */
     display: flex;
     justify-content: center;
-    --num: 0001010;
-    counter-reset: num var(--num);
-    transition: --num 1s;
-}
-
-.counter::after {
-    content: counter(num, decimal);
 }
 
 .description {
