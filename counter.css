@@ -127,8 +127,9 @@ body {
     position: relative;
     bottom: -4px;    
 }
-span .liters {
+span.liters {
     color: #333;
+    bottom: 0px;
 }
 
 .counter {
