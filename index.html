@@ -65,6 +65,9 @@
             }
             const paddedCount = padNumber(count, 8);
             counterElement.textContent = paddedCount;
+            console.info(paddedCount); // Debugging line
+            console.info(counterElement); // Debugging line
+            console.info("---"); // Debugging line
     
             // Decrease the interval to speed up the counter
             if (interval > 100) { // Set a minimum interval limit
@@ -73,7 +76,6 @@
         }
     
         // Start the counter
-        updateCounter(); // Initial call to set the initial value
         setInterval(updateCounter, interval); // Repeatedly call updateCounter
     </script>
     <section id="watt">
