@@ -58,7 +58,7 @@
         }
 
         function updateCounter() {
-            console.log("now updating counter...");
+            console.info("now updating counter...");
 
             count += 0.1;
             if (count >= 200.0) {
@@ -67,9 +67,9 @@
             }
             const paddedCount = padNumber(count, 8);
             counterElement.textContent = paddedCount;
-            console.log(paddedCount);
-            console.log(counterElement);
-            console.log("---");
+            console.info(paddedCount);
+            console.info(counterElement);
+            console.info("---");
 
             // Decrease the interval to speed up the counter
             if (interval > 100) { // Set a minimum interval limit
