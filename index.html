@@ -35,7 +35,7 @@
             <div class="container">
                 <h3>Your water usage today</h3>
                 <div class="counter-display">
-                    <div class="counter" id="counterdigits">101.0</div>
+                    <div class="counter" id="counterdigits"></div>
                     <p style="color:#FFF; line-height: 0%; margin:0">liters</p>
                 </div>
                 <div class="description">
@@ -44,33 +44,7 @@
                 </div>
             </div>
         </div>
-    </section> 
-    <script>
-        const counterElement = document.getElementById("counterdigits");
-        let count = 101.0;
-        let interval = 3000; // Start with 3 seconds
-        let decrement = 50; // Decrease interval by 50ms each step
-
-        function updateCounter() {
-            count += 0.1;
-            if (count >= 200.0) {
-                count = 101.0;
-                interval = 3000; // Reset interval when restarting
-            }
-            counterElement.textContent = count.toFixed(1);
-
-            // Decrease the interval to speed up the counter
-            if (interval > 100) { // Set a minimum interval limit
-                interval -= decrement;
-            }
-
-            // Schedule the next update
-            setTimeout(updateCounter, interval);
-        }
-
-        // Start the counter
-        setTimeout(updateCounter, interval);
-    </script> 
+    </section>  
     <section id="watt">
         <div class="content">
             <div class="container">
