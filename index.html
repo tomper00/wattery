@@ -50,31 +50,31 @@
         let count = 101.0;
         let interval = 3000; // Start with 3 seconds
         let decrement = 50; // Decrease interval by 50ms each step
-
+    
         function padNumber(num, size) {
-            let s = num + "";
+            let s = num.toFixed(1); // Ensure the number has one decimal place
             while (s.length < size) s = "0" + s;
             return s;
         }
-
+    
         function updateCounter() {
             count += 0.1;
             if (count >= 200.0) {
                 count = 101.0;
                 interval = 3000; // Reset interval when restarting
             }
-            const paddedCount = padNumber(count.toFixed(1), 8);
+            const paddedCount = padNumber(count, 8);
             counterElement.textContent = paddedCount;
-
+    
             // Decrease the interval to speed up the counter
             if (interval > 100) { // Set a minimum interval limit
                 interval -= decrement;
             }
-
+    
             // Schedule the next update
             setTimeout(updateCounter, interval);
         }
-
+    
         // Start the counter
         setTimeout(updateCounter, interval);
     </script>
