@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="./common.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Water Usage Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="demo-style.css">
     <link rel="stylesheet" href="style.css">
-
-    <script src="./common.js"></script>
-
+    <link rel="stylesheet" href="demo-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 </head>
 <body>
-    <div id="menu"></div>
-
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
@@ -46,59 +43,120 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Hotel Water Usage Dashboard</h1>
+                    <div class="input-group">
+                        <input type="text" class="form-control datepicker" placeholder="Select Date Range">
+                        <select class="form-select" id="periodSelector">
+                            <option selected>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 3 Months</option>
+                            <option>Last 6 Months</option>
+                            <option>Last Year</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="row">
-                    <!-- Widget: Room Outliers -->
-                    <div class="col-md-4">
+                    <!-- Widget: Compared to Avg Day -->
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal">Room Outliers</h4>
+                                <h4 class="my-0 fw-normal">Compared to Avg Day</h4>
                             </div>
                             <div class="card-body">
-                                <ul id="room-outliers" class="list-group list-group-flush">
-                                    <!-- List of rooms that are outliers -->
-                                </ul>
+                                <h1 class="card-title pricing-card-title">0% <small class="text-muted">less</small></h1>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Widget: Total Savings -->
-                    <div class="col-md-4">
+                    <!-- Widget: Daily Water Cost -->
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal">Total Savings</h4>
+                                <h4 class="my-0 fw-normal">Daily Water Cost</h4>
                             </div>
                             <div class="card-body">
-                                <h1 class="card-title pricing-card-title">0% <small class="text-muted">compared to initial usage</small></h1>
+                                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">today</small></h1>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Widget: Top 10 Rooms -->
-                    <div class="col-md-4">
+                    <!-- Widget: Daily Water Savings -->
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal">Top 10 Rooms</h4>
+                                <h4 class="my-0 fw-normal">Daily Water Savings</h4>
                             </div>
                             <div class="card-body">
-                                <ul id="top-10-rooms" class="list-group list-group-flush">
-                                    <!-- List of top 10 rooms with least usage -->
-                                </ul>
+                                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">today</small></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Year to Date Savings -->
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Year to Date Savings</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">YTD</small></h1>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Water Usage Over Time Chart -->
+                <!-- Water Usage Comparison Chart -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal">Water Usage Over Time</h4>
+                                <h4 class="my-0 fw-normal">Water Usage Comparison</h4>
                             </div>
                             <div class="card-body">
-                                <canvas id="waterUsageChart"></canvas>
+                                <canvas id="waterUsageComparisonChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top, Bottom Rooms and Estimated Daily Usage -->
+                <div class="row">
+                    <!-- Widget: Top Rooms -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Top Rooms</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul id="top-rooms" class="list-group list-group-flush">
+                                    <!-- List of top rooms -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Bottom Rooms -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Bottom Rooms</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul id="bottom-rooms" class="list-group list-group-flush">
+                                    <!-- List of bottom rooms -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Estimated Daily Usage -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal">Estimated Daily Usage</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">0 <small class="text-muted">liters</small></h1>
                             </div>
                         </div>
                     </div>
@@ -108,7 +166,13 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="demo-script.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
