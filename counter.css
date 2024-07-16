@@ -105,7 +105,7 @@ body {
 }
 
 .counter-display {
-    background: #000;
+    background: #333;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -114,6 +114,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.liters {
+    color: #FFF;
+    line-height: 0%;
+    margin: 1px;
+    font-size: 0.7rem;
+    border: 0px;
+    position: relative;
+    bottom: -4px;    
 }
 
 .counter {
