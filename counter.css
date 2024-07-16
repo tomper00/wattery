@@ -109,11 +109,12 @@ body {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    width: 200px;
 }
 
 .counter {
     font-size: 3rem;
-    color: #0f0;
+    color: #ffffff;
     font-family: 'Orbitron', 'Courier New', Courier, monospace;
 }
 
