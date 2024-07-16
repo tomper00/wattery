@@ -1,4 +1,4 @@
-// script.js
+// demo-script.js
 
 document.addEventListener('DOMContentLoaded', function () {
     // Example data
@@ -21,122 +21,147 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Populate Room Outliers
     const roomOutliersList = document.getElementById('room-outliers');
-    roomOutliers.forEach(room => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item';
-        li.textContent = room;
-        roomOutliersList.appendChild(li);
-    });
+    if (roomOutliersList) {
+        roomOutliers.forEach(room => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = room;
+            roomOutliersList.appendChild(li);
+        });
+    }
 
     // Populate Top 10 Rooms
     const top10RoomsList = document.getElementById('top-10-rooms');
-    top10Rooms.forEach(room => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item';
-        li.textContent = room;
-        top10RoomsList.appendChild(li);
-    });
+    if (top10RoomsList) {
+        top10Rooms.forEach(room => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = room;
+            top10RoomsList.appendChild(li);
+        });
+    }
 
     // Populate Bottom Rooms
     const bottomRoomsList = document.getElementById('bottom-rooms');
-    bottomRooms.forEach(room => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item';
-        li.textContent = room;
-        bottomRoomsList.appendChild(li);
-    });
+    if (bottomRoomsList) {
+        bottomRooms.forEach(room => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = room;
+            bottomRoomsList.appendChild(li);
+        });
+    }
 
     // Update Total Savings
-    document.querySelector('.card-title').innerHTML = `${totalSavings}% <small class="text-muted">compared to initial usage</small>`;
+    const totalSavingsElement = document.querySelector('.card-title');
+    if (totalSavingsElement) {
+        totalSavingsElement.innerHTML = `${totalSavings}% <small class="text-muted">compared to initial usage</small>`;
+    }
 
     // Update Daily Water Cost
-    document.querySelector('.card-title:nth-of-type(2)').innerHTML = `$${dailyWaterCost} <small class="text-muted">today</small>`;
+    const dailyWaterCostElement = document.querySelectorAll('.card-title')[1];
+    if (dailyWaterCostElement) {
+        dailyWaterCostElement.innerHTML = `$${dailyWaterCost} <small class="text-muted">today</small>`;
+    }
 
     // Update Daily Water Savings
-    document.querySelector('.card-title:nth-of-type(3)').innerHTML = `$${dailyWaterSavings} <small class="text-muted">today</small>`;
+    const dailyWaterSavingsElement = document.querySelectorAll('.card-title')[2];
+    if (dailyWaterSavingsElement) {
+        dailyWaterSavingsElement.innerHTML = `$${dailyWaterSavings} <small class="text-muted">today</small>`;
+    }
 
     // Update Year to Date Savings
-    document.querySelector('.card-title:nth-of-type(4)').innerHTML = `$${ytdSavings} <small class="text-muted">YTD</small>`;
+    const ytdSavingsElement = document.querySelectorAll('.card-title')[3];
+    if (ytdSavingsElement) {
+        ytdSavingsElement.innerHTML = `$${ytdSavings} <small class="text-muted">YTD</small>`;
+    }
 
     // Update Estimated Daily Usage
-    document.querySelector('.card-title:nth-of-type(5)').innerHTML = `${estimatedDailyUsage} <small class="text-muted">liters</small>`;
+    const estimatedDailyUsageElement = document.querySelectorAll('.card-title')[4];
+    if (estimatedDailyUsageElement) {
+        estimatedDailyUsageElement.innerHTML = `${estimatedDailyUsage} <small class="text-muted">liters</small>`;
+    }
 
     // Render Water Usage Over Time Chart
-    const ctx = document.getElementById('waterUsageChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            datasets: [{
-                label: 'Water Usage (liters)',
-                data: waterUsageData,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 2,
-                fill: false
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                x: {
-                    display: true,
-                    title: {
-                        display: true,
-                        text: 'Month'
-                    }
-                },
-                y: {
-                    display: true,
-                    title: {
-                        display: true,
-                        text: 'Water Usage (liters)'
-                    }
-                }
-            }
-        }
-    });
-
-    // Render Water Usage Comparison Chart
-    const comparisonCtx = document.getElementById('waterUsageComparisonChart').getContext('2d');
-    new Chart(comparisonCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            datasets: [
-                {
-                    label: 'Current Period',
+    const ctx = document.getElementById('waterUsageChart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Water Usage (liters)',
                     data: waterUsageData,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 2,
                     fill: false
-                },
-                {
-                    label: 'Previous Period',
-                    data: previousPeriodData,
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                x: {
-                    display: true,
-                    title: {
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
                         display: true,
-                        text: 'Month'
-                    }
-                },
-                y: {
-                    display: true,
-                    title: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    },
+                    y: {
                         display: true,
-                        text: 'Water Usage (liters)'
+                        title: {
+                            display: true,
+                            text: 'Water Usage (liters)'
+                        }
                     }
                 }
             }
-        }
-    });
+        });
+    }
+
+    // Render Water Usage Comparison Chart
+    const comparisonCtx = document.getElementById('waterUsageComparisonChart');
+    if (comparisonCtx) {
+        new Chart(comparisonCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Current Period',
+                        data: waterUsageData,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    },
+                    {
+                        label: 'Previous Period',
+                        data: previousPeriodData,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Water Usage (liters)'
+                        }
+                    }
+                }
+            }
+        });
+    }
 });
