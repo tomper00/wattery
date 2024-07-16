@@ -1,7 +1,29 @@
 /* counter.css */
-@font-face {
-    font-family: 'Digital-7';
-    src: url('fonts/digital-7.ttf') format('truetype');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+.content, #contact {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-bg {
+    background: url('./img/iStock-896068834.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 700px;
+}
+
+.hero-bg .container {
+    background: rgba(128, 128, 128, 0.6);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 #counter {
@@ -91,8 +113,8 @@
 
 .counter {
     font-size: 3rem;
-    color: #fff;
-    font-family: 'Digital-7', 'Courier New', Courier, monospace;
+    color: #0f0;
+    font-family: 'Orbitron', 'Courier New', Courier, monospace;
 }
 
 .description {
