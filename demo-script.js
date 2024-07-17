@@ -82,86 +82,201 @@ document.addEventListener('DOMContentLoaded', function () {
         estimatedDailyUsageElement.innerHTML = `${estimatedDailyUsage} <small class="text-muted">liters</small>`;
     }
 
-    // Render Water Usage Over Time Chart
-    const ctx = document.getElementById('waterUsageChart');
-    if (ctx) {
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Water Usage (liters)',
-                    data: waterUsageData,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Month'
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Water Usage (liters)'
-                        }
-                    }
-                }
-            }
-        });
+    // Create gradient for charts
+    function createGradient(ctx, color1, color2) {
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, color1);
+        gradient.addColorStop(1, color2);
+        return gradient;
     }
 
-    // Render Water Usage Comparison Chart
-    const comparisonCtx = document.getElementById('waterUsageComparisonChart');
-    if (comparisonCtx) {
-        new Chart(comparisonCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [
-                    {
-                        label: 'Current Period',
-                        data: waterUsageData,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 2,
-                        fill: false
-                    },
-                    {
-                        label: 'Previous Period',
-                        data: previousPeriodData,
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 2,
-                        fill: false
+    // Render Chart for Compared to Avg Day
+    const comparedToAvgDayCtx = document.getElementById('comparedToAvgDayChart').getContext('2d');
+    new Chart(comparedToAvgDayCtx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Compared to Avg Day',
+                data: [10, 20, 15, 25, 20, 30, 40],
+                backgroundColor: createGradient(comparedToAvgDayCtx, '#90FEB4', '#49A2E5'),
+                borderColor: '#49A2E5',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Day'
                     }
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
+                },
+                y: {
+                    display: true,
+                    title: {
                         display: true,
-                        title: {
-                            display: true,
-                            text: 'Month'
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Water Usage (liters)'
-                        }
+                        text: 'Savings (%)'
                     }
                 }
             }
-        });
-    }
+        }
+    });
+
+    // Render Chart for Daily Water Cost
+    const dailyWaterCostCtx = document.getElementById('dailyWaterCostChart').getContext('2d');
+    new Chart(dailyWaterCostCtx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Daily Water Cost',
+                data: [50, 40, 45, 35, 30, 25, 20],
+                backgroundColor: createGradient(dailyWaterCostCtx, '#F365F9', '#5E48EC'),
+                borderColor: '#5E48EC',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Day'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Cost (USD)'
+                    }
+                }
+            }
+        }
+    });
+
+    // Render Chart for Daily Water Savings
+    const dailyWaterSavingsCtx = document.getElementById('dailyWaterSavingsChart').getContext('2d');
+    new Chart(dailyWaterSavingsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Daily Water Savings',
+                data: [5, 10, 8, 12, 15, 18, 20],
+                backgroundColor: createGradient(dailyWaterSavingsCtx, '#90FEB4', '#49A2E5'),
+                borderColor: '#49A2E5',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Day'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Savings (USD)'
+                    }
+                }
+            }
+        }
+    });
+
+    // Render Chart for Year to Date Savings
+    const ytdSavingsCtx = document.getElementById('ytdSavingsChart').getContext('2d');
+    new Chart(ytdSavingsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Year to Date Savings',
+                data: [20, 30, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130],
+                backgroundColor: createGradient(ytdSavingsCtx, '#F365F9', '#5E48EC'),
+                borderColor: '#5E48EC',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Savings (USD)'
+                    }
+                }
+            }
+        }
+    });
+
+    // Render Water Usage Comparison Chart
+    const comparisonCtx = document.getElementById('waterUsageComparisonChart').getContext('2d');
+    new Chart(comparisonCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [
+                {
+                    label: 'Current Period',
+                    data: waterUsageData,
+                    backgroundColor: createGradient(comparisonCtx, '#90FEB4', '#49A2E5'),
+                    borderColor: '#49A2E5',
+                    borderWidth: 2,
+                    fill: true
+                },
+                {
+                    label: 'Previous Period',
+                    data: previousPeriodData,
+                    backgroundColor: createGradient(comparisonCtx, '#F365F9', '#5E48EC'),
+                    borderColor: '#5E48EC',
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Water Usage (liters)'
+                    }
+                }
+            }
+        }
+    });
 });
