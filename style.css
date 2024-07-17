@@ -186,12 +186,13 @@
     max-width: 800px;
     margin: 20px auto;
     position: relative;
+    
 }
 #watt .content {
     margin-left: 10%;
 }
 #watt .tablet {
-    margin-left: 10%;
+    margin-left: 30%;
 }
 #watt .text {
     margin-right: 20%;
