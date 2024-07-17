@@ -3,8 +3,39 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Example data
     const roomOutliers = ['Room 101', 'Room 202', 'Room 303'];
-    const top10Rooms = ['Room 105', 'Room 110', 'Room 210', 'Room 305', 'Room 405', 'Room 505', 'Room 605', 'Room 705', 'Room 805', 'Room 905'];
-    const bottomRooms = ['Room 201', 'Room 301', 'Room 401', 'Room 501', 'Room 601', 'Room 701', 'Room 801', 'Room 901', 'Room 1001', 'Room 1101'];
+    🔬
+    gpt-4
+    Det verkar som att problemet med undefined i tabellerna beror på att objekten i top10Rooms och bottomRooms inte innehåller egenskaperna room och usage. Låt oss uppdatera demo-script.js för att använda rätt dataformat och säkerställa att vi korrekt refererar till dessa egenskaper.
+    
+    Uppdaterad demo-script.js
+    Här är de nödvändiga ändringarna för att fixa problemet:
+    
+    // Uppdatera top10Rooms och bottomRooms för att inkludera vattenförbrukning
+    const top10Rooms = [
+        { room: 'Room 105', usage: 150 },
+        { room: 'Room 110', usage: 160 },
+        { room: 'Room 210', usage: 170 },
+        { room: 'Room 305', usage: 180 },
+        { room: 'Room 405', usage: 190 },
+        { room: 'Room 505', usage: 200 },
+        { room: 'Room 605', usage: 210 },
+        { room: 'Room 705', usage: 220 },
+        { room: 'Room 805', usage: 230 },
+        { room: 'Room 905', usage: 240 }
+    ];
+    
+    const bottomRooms = [
+        { room: 'Room 201', usage: 350 },
+        { room: 'Room 301', usage: 360 },
+        { room: 'Room 401', usage: 370 },
+        { room: 'Room 501', usage: 380 },
+        { room: 'Room 601', usage: 390 },
+        { room: 'Room 701', usage: 400 },
+        { room: 'Room 801', usage: 410 },
+        { room: 'Room 901', usage: 420 },
+        { room: 'Room 1001', usage: 430 },
+        { room: 'Room 1101', usage: 440 }
+    ];
     const totalSavings = 15; // in percentage
     const dailyWaterCost = 50; // in dollars
     const dailyWaterSavings = 10; // in dollars
@@ -30,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-   // Populate Top 10 Rooms
-const top10RoomsList = document.getElementById('top-rooms');
+// Populate Top 10 Rooms
+const top10RoomsList = document.getElementById('top-10-rooms');
 if (top10RoomsList) {
     top10Rooms.slice(0, 10).forEach((room, index) => {
         const li = document.createElement('li');
