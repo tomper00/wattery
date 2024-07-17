@@ -22,10 +22,23 @@
         <header class="text-white text-center py-5">
             <div class="container">
                 <h1>Welcome to Wattery</h1>
-                <p class="lead">We save hotels money By EMPOWERING GUEST CONSERVATION behavior</p>
-                <p>Inspiring Sustainable Hospitality, One Guest at a Time</p>
-                <!--a href="#nudging" class="btn btn-lg btn-light">Learn More</a-->
-            </div>
+                <div class="typewriter-container" id="typewriter-text"></div>
+
+                <script>
+                    const texts = ["Empower your guests to save water and electricity", 
+                                "Hotels save money", 
+                                "Together, we save the environment"];
+                    let currentIndex = 0;
+            
+                    function typeWriter() {
+                        const textElement = document.getElementById('typewriter-text');
+                        textElement.textContent = texts[currentIndex];
+                        currentIndex = (currentIndex + 1) % texts.length;
+                    }
+            
+                    typeWriter();
+                    setInterval(typeWriter, 3000); // Change text every 3 seconds
+                </script>
         </header>
     </div>
     <section id="counter">
