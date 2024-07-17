@@ -3,13 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Example data
     const roomOutliers = ['Room 101', 'Room 202', 'Room 303'];
-    🔬
-    gpt-4
-    Det verkar som att problemet med undefined i tabellerna beror på att objekten i top10Rooms och bottomRooms inte innehåller egenskaperna room och usage. Låt oss uppdatera demo-script.js för att använda rätt dataformat och säkerställa att vi korrekt refererar till dessa egenskaper.
-    
-    Uppdaterad demo-script.js
-    Här är de nödvändiga ändringarna för att fixa problemet:
-    
+    { room: 'Room 101', usage: 1300 }
     // Uppdatera top10Rooms och bottomRooms för att inkludera vattenförbrukning
     const top10Rooms = [
         { room: 'Room 105', usage: 150 },
@@ -25,16 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     
     const bottomRooms = [
-        { room: 'Room 201', usage: 350 },
-        { room: 'Room 301', usage: 360 },
-        { room: 'Room 401', usage: 370 },
-        { room: 'Room 501', usage: 380 },
-        { room: 'Room 601', usage: 390 },
-        { room: 'Room 701', usage: 400 },
-        { room: 'Room 801', usage: 410 },
-        { room: 'Room 901', usage: 420 },
-        { room: 'Room 1001', usage: 430 },
-        { room: 'Room 1101', usage: 440 }
+        { room: 'Room 1101', usage: 940 },
+        { room: 'Room 1001', usage: 836 },
+        { room: 'Room 901', usage: 828 },
+        { room: 'Room 801', usage: 770 },
+        { room: 'Room 701', usage: 556 },
+        { room: 'Room 601', usage: 532 },
+        { room: 'Room 501', usage: 488 },
+        { room: 'Room 401', usage: 489 },
+        { room: 'Room 301', usage: 433 },
+        { room: 'Room 201', usage: 422 }
     ];
     const totalSavings = 15; // in percentage
     const dailyWaterCost = 50; // in dollars
