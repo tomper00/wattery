@@ -88,9 +88,10 @@
 }
 
 #savings {
+    background: #aaa;
     background-size: cover;
     color: white;
-    height: 700px;
+    height: 500px;
 }
 
 #nudging video {
