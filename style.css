@@ -187,7 +187,12 @@
     margin: 20px auto;
     position: relative;
 }
-
+#watt .content {
+    margin-left: 10%;
+}
+#watt .tablet {
+    margin-left: 10%;
+}
 
 
 @media (max-width: 768px) {
