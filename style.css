@@ -6,13 +6,12 @@
     padding: 20px;
 }
 .typewriter-container {
-    font-family: 'Digital-7', monospace;
-    font-size: 2rem;
+    font-size: 1.2rem;
     border-right: 2px solid;
     white-space: nowrap;
     overflow: hidden;
-    width: 20ch;
-    animation: typing 2s steps(20), blink 0.5s step-end infinite alternate;
+    width: 100%;
+    animation: typing 2s steps(30), blink 0.1s step-end infinite alternate;
 }
 .background-video {
     position: absolute;
@@ -46,7 +45,7 @@
 .hero-bg .container {
     background: rgba(128, 128, 128, 0.6);
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     padding: 20px;
     border-radius: 5px;
 }
