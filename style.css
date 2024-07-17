@@ -188,30 +188,7 @@
     position: relative;
 }
 
-/* iPad-liknande skärm med skuggning */
-.content.tablet:before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    width: 60px;
-    height: 5px;
-    background: #333;
-    border-radius: 5px;
-    transform: translateX(-50%);
-}
 
-.content.tablet:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 60px;
-    height: 5px;
-    background: #333;
-    border-radius: 5px;
-    transform: translateX(-50%);
-}
 
 @media (max-width: 768px) {
     .hero-bg {

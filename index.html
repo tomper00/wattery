@@ -63,6 +63,7 @@
     </section>  
     <script>
         const counterElement = document.getElementById("counterdigits");
+        const counterElement2 = document.getElementById("counterdigits2"); 
         let count = 101.0;
         let interval = 100; // Start with 0.1 seconds
         let decrement = 50; // Decrease interval by 50ms each step
@@ -81,9 +82,8 @@
             }
             const paddedCount = padNumber(count, 8);
             counterElement.textContent = paddedCount;
-            console.info(paddedCount); // Debugging line
-            console.info(counterElement); // Debugging line
-            console.info("---"); // Debugging line
+            counterElement2.textContent = paddedCount;
+
     
             // Decrease the interval to speed up the counter
             if (interval > 100) { // Set a minimum interval limit
@@ -103,6 +103,20 @@
         <div class="container">
             <h2>THE WATT IN WATTERY</h2>
             <p>Real-time analytics at your fingertips</p>
+        </div>
+    </div>
+    <div class="content tablet">
+        <div class="container">
+            <h3>ELECTRICITY USAGE TODAY</h3>
+            <div class="counter-display">
+                <div class="counter" id="counterdigits2">000101.0</div>
+                <p class="liters">watt</p>
+            </div>
+            <hr>
+            <div class="description">
+                <p>95/203  Room Rank</p> 
+                <p>250<span class="liters">watt</span>  Hotel AVG</p> 
+            </div>
         </div>
     </div>
 </section>
