@@ -86,12 +86,21 @@
     color: white;
     text-align: center;
 }
-
-#savings {
+#dashboard {
     background: #aaa;
     background-size: cover;
     color: white;
     height: 500px;
+}
+
+#savings {
+    background: url('./img/dashboard.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #nudging video {
