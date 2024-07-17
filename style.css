@@ -39,7 +39,6 @@
     to { border-color: black; }
 }
 .hero-bg {
-    background: url('./img/ripple-bg.png') no-repeat center center;
     background-size: cover;
     color: white;
     height: 700px;
