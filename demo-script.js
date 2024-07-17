@@ -30,27 +30,48 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Populate Top 10 Rooms
-    const top10RoomsList = document.getElementById('top-10-rooms');
-    if (top10RoomsList) {
-        top10Rooms.forEach(room => {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.textContent = room;
-            top10RoomsList.appendChild(li);
-        });
-    }
+   // Populate Top 10 Rooms
+const top10RoomsList = document.getElementById('top-rooms');
+if (top10RoomsList) {
+    top10Rooms.slice(0, 10).forEach((room, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<strong>${index + 1}</strong>. ${room.room} - ${room.usage} liters`;
+        top10RoomsList.appendChild(li);
+    });
+}
 
-    // Populate Bottom Rooms
-    const bottomRoomsList = document.getElementById('bottom-rooms');
-    if (bottomRoomsList) {
-        bottomRooms.forEach(room => {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.textContent = room;
-            bottomRoomsList.appendChild(li);
-        });
-    }
+// Populate Bottom Rooms
+const bottomRoomsList = document.getElementById('bottom-rooms');
+if (bottomRoomsList) {
+    bottomRooms.slice(0, 10).forEach((room, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<strong>${index + 1}</strong>. ${room.room} - ${room.usage} liters`;
+        bottomRoomsList.appendChild(li);
+    });
+}
+
+// Show more functionality
+document.getElementById('showMoreTopRooms').addEventListener('click', () => {
+    top10RoomsList.innerHTML = '';
+    top10Rooms.forEach((room, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<strong>${index + 1}</strong>. ${room.room} - ${room.usage} liters`;
+        top10RoomsList.appendChild(li);
+    });
+});
+
+document.getElementById('showMoreBottomRooms').addEventListener('click', () => {
+    bottomRoomsList.innerHTML = '';
+    bottomRooms.forEach((room, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<strong>${index + 1}</strong>. ${room.room} - ${room.usage} liters`;
+        bottomRoomsList.appendChild(li);
+    });
+});
 
     // Update Total Savings
     const totalSavingsElement = document.querySelector('.card-title');
