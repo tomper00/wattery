@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dailyWaterCost = 50; // in dollars
     const dailyWaterSavings = 10; // in dollars
     const ytdSavings = 500; // in dollars
-    const estimatedDailyUsage = 120; // in liters
+    const estimatedDailyUsage = 11220; // in liters
     const waterUsageData = [20, 30, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130]; // Example data
     const previousPeriodData = [25, 35, 40, 55, 65, 75, 85, 95, 105, 115, 125, 135]; // Example data
 
