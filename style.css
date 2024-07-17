@@ -11,6 +11,7 @@
     overflow: hidden;
     width: 100%;
     color: #333;
+    margin-top: 20%;
 }
 .background-video {
     top: 50%;
@@ -51,7 +52,6 @@
 }
 .logo {
     width: 150px;
-    height: 150px;
     margin: -36px 25px 10px 0px;
     display: block;
 }
