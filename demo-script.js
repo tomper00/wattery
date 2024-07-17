@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Example data
     const roomOutliers = ['Room 101', 'Room 202', 'Room 303'];
-    { room: 'Room 101', usage: 1300 }
+
     // Uppdatera top10Rooms och bottomRooms för att inkludera vattenförbrukning
     const top10Rooms = [
         { room: 'Room 105', usage: 150 },
