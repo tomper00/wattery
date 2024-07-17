@@ -6,12 +6,10 @@
     padding: 20px;
 }
 .typewriter-container {
-    font-size: 1.2rem;
-    border-right: 2px solid;
+    font-size: 2.2rem;
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    animation: typing 2s steps(30), blink 0.1s step-end infinite alternate;
 }
 .background-video {
     top: 50%;
