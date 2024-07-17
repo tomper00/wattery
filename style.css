@@ -87,14 +87,17 @@
     text-align: center;
 }
 #dashboard {
+    background: url('./img/dashboard.png') no-repeat center center;
     background: #aaa;
     background-size: cover;
     color: white;
-    height: 500px;
+    height: 900px;
+}
+#dashboard h2 {
+    color: #000;
 }
 
 #savings {
-    background: url('./img/dashboard.png') no-repeat center center;
     background-size: cover;
     color: white;
     height: 500px;
