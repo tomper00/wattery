@@ -38,6 +38,19 @@
     from { border-color: transparent; }
     to { border-color: black; }
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Apply the fade-in animation to the text */
+.fade-in-text {
+    opacity: 0; /* Start with the text hidden */
+    animation: fadeIn 2s forwards; /* 2s is the duration of the fade-in effect */
+}
 .hero-bg {
     background-size: cover;
     color: white;
