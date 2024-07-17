@@ -10,6 +10,7 @@
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
+    color: #333;
 }
 .background-video {
     top: 50%;
@@ -25,8 +26,6 @@
 }
 .hero-bg .background-video {
     position: absolute;
-
-
 }
 
 @keyframes typing {
@@ -41,19 +40,18 @@
 .hero-bg {
     background-size: cover;
     color: white;
-    height: 700px;
+    height: 600px;
 }
 
 .hero-bg .container {
-    background: rgba(128, 128, 128, 0.6);
     width: 100%;
     max-width: 800px;
     padding: 20px;
     border-radius: 5px;
 }
 .logo {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
     margin: -36px 25px 10px 0px;
     display: block;
 }
