@@ -14,7 +14,6 @@
     animation: typing 2s steps(30), blink 0.1s step-end infinite alternate;
 }
 .background-video {
-    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -26,6 +25,12 @@
     background-size: cover;
     overflow: hidden;
 }
+.hero-bg .background-video {
+    position: absolute;
+
+
+}
+
 @keyframes typing {
     from { width: 0; }
     to { width: 20ch; }
