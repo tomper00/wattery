@@ -39,6 +39,13 @@
     text-align: center;
 }
 
+#savings {
+    background: url('./img/') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 700px;
+}
+
 #nudging video {
     position: absolute;
     top: 50%;
@@ -70,7 +77,7 @@
 }
 
 #watt {
-    background: url('./img/labb.png') no-repeat center center;
+    background: url('./img/dashboard.png') no-repeat center center;
     background-size: cover;
     color: white;
     height: 500px;
