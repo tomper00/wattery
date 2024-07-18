@@ -55,6 +55,11 @@
     opacity: 0; /* Start with the text hidden */
     animation: fadeIn 3s forwards; /* 2s is the duration of the fade-in effect */
 }
+/* New class to reset the fade-in animation */
+.fade-in-text.reset-animation {
+    animation: none;
+}
+
 .hero-bg {
     background-size: cover;
     color: white;
