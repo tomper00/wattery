@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="counter.css">
 
 </head>
+
 <body>
     <!-- Navigation -->
     <div id="menu"></div>
@@ -30,50 +31,54 @@
                             content: "Guests save water and electricity",
                             position: "left", // or "left", "right"
                             size: "2rem",
-                            color: "#333"
+                            color: "#333",
+                            top: "10%" // Vertical position
                         },
                         {
                             content: "Hotels save money",
                             position: "right",
                             size: "2.3rem",
-                            color: "#222"
+                            color: "#222",
+                            top: "15%" // Vertical position
                         },
                         {
                             content: "Together, we save the environment",
                             position: "center",
                             size: "3rem",
-                            color: "#000"
+                            color: "#000",
+                            top: "20%" // Vertical position
                         }
                     ];
                     let currentIndex = 0;
-                
+
                     function typeWriter() {
                         const textElement = document.getElementById('typewriter-text');
-                        
+
                         // Remove the animation class to reset it
                         textElement.classList.remove('fade-in-text');
                         textElement.classList.add('reset-animation');
-                        
+
                         // Force reflow to restart the animation
                         void textElement.offsetWidth;
-                        
+
                         // Set the new text and its properties
-                        const { content, position, size, color } = texts[currentIndex];
+                        const { content, position, size, color, top } = texts[currentIndex];
                         textElement.textContent = content;
                         textElement.style.textAlign = position;
                         textElement.style.fontSize = size;
                         textElement.style.color = color;
-                        
+                        textElement.style.top = top;
+
                         currentIndex = (currentIndex + 1) % texts.length;
-                        
+
                         // Re-add the animation class
                         textElement.classList.remove('reset-animation');
                         textElement.classList.add('fade-in-text');
                     }
-                
+
                     typeWriter();
                     setInterval(typeWriter, 3000); // Change text every 3 seconds
-                </script>  
+                </script>
         </header>
     </div>
     <section id="counter">
@@ -90,25 +95,25 @@
                 </div>
                 <hr>
                 <div class="description">
-                    <p>95/203  Room Rank</p> 
-                    <p>250<span class="liters">liters</span>  Hotel AVG</p> 
+                    <p>95/203 Room Rank</p>
+                    <p>250<span class="liters">liters</span> Hotel AVG</p>
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
     <script>
         const counterElement = document.getElementById("counterdigits");
-        const counterElement2 = document.getElementById("counterdigits2"); 
+        const counterElement2 = document.getElementById("counterdigits2");
         let count = 101.0;
         let interval = 100; // Start with 0.1 seconds
         let decrement = 50; // Decrease interval by 50ms each step
-    
+
         function padNumber(num, size) {
             let s = num.toFixed(1); // Ensure the number has one decimal place
             while (s.length < size) s = "0" + s;
             return s;
         }
-    
+
         function updateCounter() {
             count += 0.1;
             if (count >= 200.0) {
@@ -119,42 +124,42 @@
             counterElement.textContent = paddedCount;
             counterElement2.textContent = paddedCount;
 
-    
+
             // Decrease the interval to speed up the counter
             if (interval > 100) { // Set a minimum interval limit
                 interval -= decrement;
             }
         }
-    
+
         // Start the counter
         setInterval(updateCounter, interval); // Repeatedly call updateCounter
     </script>
-<section id="watt">
-    <video autoplay muted loop class="background-video">
-        <source src="video/iStock-1224642078.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-    <div class="content">
-        <div class="container text">
-            <h2>THE WATT IN WATTERY</h2>
-            <p>Real-time analytics at your fingertips</p>
-        </div>
-    </div>
-    <div class="content tablet">
-        <div class="container">
-            <h3>ELECTRICITY USAGE TODAY</h3>
-            <div class="counter-display">
-                <div class="counter" id="counterdigits2">0101.0</div>
-                <p class="liters">watt</p>
-            </div>
-            <hr>
-            <div class="description">
-                <p>95/203  Room Rank</p> 
-                <p>250<span class="liters">watt</span>  Hotel AVG</p> 
+    <section id="watt">
+        <video autoplay muted loop class="background-video">
+            <source src="video/iStock-1224642078.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="content">
+            <div class="container text">
+                <h2>THE WATT IN WATTERY</h2>
+                <p>Real-time analytics at your fingertips</p>
             </div>
         </div>
-    </div>
-</section>
+        <div class="content tablet">
+            <div class="container">
+                <h3>ELECTRICITY USAGE TODAY</h3>
+                <div class="counter-display">
+                    <div class="counter" id="counterdigits2">0101.0</div>
+                    <p class="liters">watt</p>
+                </div>
+                <hr>
+                <div class="description">
+                    <p>95/203 Room Rank</p>
+                    <p>250<span class="liters">watt</span> Hotel AVG</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="savings">
         <div class="content">
             <div class="container">
