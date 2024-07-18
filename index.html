@@ -101,39 +101,6 @@
             </div>
         </div>
     </section>
-    <script>
-        const counterElement = document.getElementById("counterdigits");
-        const counterElement2 = document.getElementById("counterdigits2");
-        let count = 101.0;
-        let interval = 100; // Start with 0.1 seconds
-        let decrement = 50; // Decrease interval by 50ms each step
-
-        function padNumber(num, size) {
-            let s = num.toFixed(1); // Ensure the number has one decimal place
-            while (s.length < size) s = "0" + s;
-            return s;
-        }
-
-        function updateCounter() {
-            count += 0.1;
-            if (count >= 200.0) {
-                count = 101.0;
-                interval = 3000; // Reset interval when restarting
-            }
-            const paddedCount = padNumber(count, 8);
-            counterElement.textContent = paddedCount;
-            counterElement2.textContent = paddedCount;
-
-
-            // Decrease the interval to speed up the counter
-            if (interval > 100) { // Set a minimum interval limit
-                interval -= decrement;
-            }
-        }
-
-        // Start the counter
-        setInterval(updateCounter, interval); // Repeatedly call updateCounter
-    </script>
     <section id="watt">
         <video autoplay muted loop class="background-video">
             <source src="video/iStock-1224642078.mp4" type="video/mp4">
@@ -232,7 +199,39 @@
 
     <!-- Footer -->
     <div id="footer"></div>
+    <script>
+        const counterElement = document.getElementById("counterdigits");
+        const counterElement2 = document.getElementById("counterdigits2");
+        let count = 101.0;
+        let interval = 100; // Start with 0.1 seconds
+        let decrement = 50; // Decrease interval by 50ms each step
 
+        function padNumber(num, size) {
+            let s = num.toFixed(1); // Ensure the number has one decimal place
+            while (s.length < size) s = "0" + s;
+            return s;
+        }
+
+        function updateCounter() {
+            count += 0.1;
+            if (count >= 200.0) {
+                count = 101.0;
+                interval = 3000; // Reset interval when restarting
+            }
+            const paddedCount = padNumber(count, 8);
+            counterElement.textContent = paddedCount;
+            counterElement2.textContent = paddedCount;
+
+
+            // Decrease the interval to speed up the counter
+            if (interval > 100) { // Set a minimum interval limit
+                interval -= decrement;
+            }
+        }
+
+        // Start the counter
+        setInterval(updateCounter, interval); // Repeatedly call updateCounter
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
