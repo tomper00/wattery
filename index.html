@@ -32,21 +32,21 @@
                             position: "left", // or "left", "right"
                             size: "2rem",
                             color: "#333",
-                            top: "10%" // Vertical position
+                            margin-top: "10%" // Vertical position
                         },
                         {
                             content: "Hotels save money",
                             position: "right",
                             size: "2.3rem",
                             color: "#222",
-                            top: "25%" // Vertical position
+                            margin-top: "25%" // Vertical position
                         },
                         {
                             content: "Together, we save the environment",
                             position: "center",
                             size: "3rem",
                             color: "#000",
-                            top: "40%" // Vertical position
+                            margin-top: "40%" // Vertical position
                         }
                     ];
                     let currentIndex = 0;
@@ -67,7 +67,7 @@
                         textElement.style.textAlign = position;
                         textElement.style.fontSize = size;
                         textElement.style.color = color;
-                        textElement.style.top = top;
+                        textElement.style.margin-top = margin-top;
 
                         currentIndex = (currentIndex + 1) % texts.length;
 
