@@ -25,79 +25,6 @@
                 <!--h1>Welcome to Wattery</h1-->
                 <button id="cta-button" class="btn btn-primary mt-4">Watch Video</button>
                 <div class="typewriter-container fade-in-text" id="typewriter-text"></div>
-                <script>
-                    const texts = [
-                        {
-                            content: "Guests save water and electricity",
-                            position: "left", // or "left", "right"
-                            size: "2rem",
-                            color: "#333",
-                            margintop: "10%" // Vertical position
-                        },
-                        {
-                            content: "Hotels save money",
-                            position: "right",
-                            size: "2.3rem",
-                            color: "#222",
-                            margintop: "25%" // Vertical position
-                        },
-                        {
-                            content: "Together, we save the environment",
-                            position: "center",
-                            size: "3rem",
-                            color: "#000",
-                            margintop: "40%" // Vertical position
-                        }
-                    ];
-                    let currentIndex = 0;
-
-                    function typeWriter() {
-                        const textElement = document.getElementById('typewriter-text');
-
-                        // Remove the animation class to reset it
-                        textElement.classList.remove('fade-in-text');
-                        textElement.classList.add('reset-animation');
-
-                        // Force reflow to restart the animation
-                        void textElement.offsetWidth;
-
-                        // Set the new text and its properties
-                        const { content, position, size, color, margintop } = texts[currentIndex];
-                        textElement.textContent = content;
-                        textElement.style.textAlign = position;
-                        textElement.style.fontSize = size;
-                        textElement.style.color = color;
-                        textElement.style.margin = margintop + "0 0 0";
-
-                        currentIndex = (currentIndex + 1) % texts.length;
-
-                        // Re-add the animation class
-                        textElement.classList.remove('reset-animation');
-                        textElement.classList.add('fade-in-text');
-                    }
-
-                    typeWriter();
-                    setInterval(typeWriter, 3000); // Change text every 3 seconds
-
-                    // Video Modal Script
-                    const ctaButton = document.getElementById('cta-button');
-                    const videoModal = document.getElementById('video-modal');
-                    const closeButton = document.querySelector('.close-button');
-
-                    ctaButton.addEventListener('click', () => {
-                        videoModal.style.display = 'block';
-                    });
-
-                    closeButton.addEventListener('click', () => {
-                        videoModal.style.display = 'none';
-                    });
-
-                    window.addEventListener('click', (event) => {
-                        if (event.target === videoModal) {
-                            videoModal.style.display = 'none';
-                        }
-                    });
-                </script>
         </header>
     </div>
     <!-- Modal for Video -->
@@ -111,6 +38,79 @@
             </video>
         </div>
     </div>
+    <script>
+        const texts = [
+            {
+                content: "Guests save water and electricity",
+                position: "left", // or "left", "right"
+                size: "2rem",
+                color: "#333",
+                margintop: "10%" // Vertical position
+            },
+            {
+                content: "Hotels save money",
+                position: "right",
+                size: "2.3rem",
+                color: "#222",
+                margintop: "25%" // Vertical position
+            },
+            {
+                content: "Together, we save the environment",
+                position: "center",
+                size: "3rem",
+                color: "#000",
+                margintop: "40%" // Vertical position
+            }
+        ];
+        let currentIndex = 0;
+
+        function typeWriter() {
+            const textElement = document.getElementById('typewriter-text');
+
+            // Remove the animation class to reset it
+            textElement.classList.remove('fade-in-text');
+            textElement.classList.add('reset-animation');
+
+            // Force reflow to restart the animation
+            void textElement.offsetWidth;
+
+            // Set the new text and its properties
+            const { content, position, size, color, margintop } = texts[currentIndex];
+            textElement.textContent = content;
+            textElement.style.textAlign = position;
+            textElement.style.fontSize = size;
+            textElement.style.color = color;
+            textElement.style.margin = margintop + "0 0 0";
+
+            currentIndex = (currentIndex + 1) % texts.length;
+
+            // Re-add the animation class
+            textElement.classList.remove('reset-animation');
+            textElement.classList.add('fade-in-text');
+        }
+
+        typeWriter();
+        setInterval(typeWriter, 3000); // Change text every 3 seconds
+
+        // Video Modal Script
+        const ctaButton = document.getElementById('cta-button');
+        const videoModal = document.getElementById('video-modal');
+        const closeButton = document.querySelector('.close-button');
+
+        ctaButton.addEventListener('click', () => {
+            videoModal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === videoModal) {
+                videoModal.style.display = 'none';
+            }
+        });
+    </script>
     <section id="counter">
         <h2>Transparency nudges your guests towards sustainable behavior</h2>
         <video autoplay muted loop class="background-video">
