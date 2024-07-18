@@ -94,7 +94,6 @@
 }
 #dashboard {
     background: url('./img/dashboard.png') no-repeat center center;
-    background: #aaa;
     background-size: cover;
     color: white;
     height: 900px;
@@ -110,6 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: gray;
 }
 
 #nudging video {
