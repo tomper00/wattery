@@ -23,7 +23,7 @@
         <header class="text-white text-center py-5">
             <div class="container">
                 <!--h1>Welcome to Wattery</h1-->
-                <button id="cta-button" class="btn btn-primary mt-4">Watch Video</button>
+                <button id="cta-button" class="btn-lg btn-primary mt-4">Watch Video</button>
                 <div class="typewriter-container fade-in-text" id="typewriter-text"></div>
         </header>
     </div>
@@ -103,6 +103,8 @@
 
         closeButton.addEventListener('click', () => {
             videoModal.style.display = 'none';
+            //play the video
+            videoModal.querySelector('video').play();
         });
 
         window.addEventListener('click', (event) => {
