@@ -107,11 +107,12 @@
 #cta-button {
     position: absolute;
     top: 535px;
-    background: #007bff;
-    color: white;
+    background: #19e8d9;
+    color: #000;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    border-color: 1px solid #888;
 }   
 /* Modal styles */
 .video-modal {
