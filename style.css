@@ -196,6 +196,7 @@
 #dashboard h2 {
     text-align: right;
     margin-right: 20px; /* Adjust as needed */
+    width: auto;
 }
 
 #watt {
