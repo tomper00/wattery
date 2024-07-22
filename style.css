@@ -188,14 +188,12 @@
 
 #dashboard .container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     height: 100%;
 }
 
 #dashboard h2 {
     text-align: right;
-    margin-right: 20px; /* Adjust as needed */
+    margin-left: 90%; /* Adjust as needed */
     width: auto;
 }
 
