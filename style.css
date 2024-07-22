@@ -1,10 +1,10 @@
-
-
+/* General Styles */
 .content,
 #contact {
     text-align: center;
     padding: 20px;
 }
+
 .typewriter-container {
     font-size: 2.2rem;
     white-space: nowrap;
@@ -12,7 +12,7 @@
     width: 100%;
     color: #333;
 }
-/* Bakgrundsvideo */
+
 .background-video {
     position: absolute;
     top: 50%;
@@ -26,21 +26,11 @@
     background-size: cover;
     overflow: hidden;
 }
-/* Specifik stil för hero-bg */
+
 .hero-bg .background-video {
     position: absolute;
 }
 
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 20ch; }
-}
-
-@keyframes blink {
-    from { border-color: transparent; }
-    to { border-color: black; }
-}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -49,12 +39,12 @@
         opacity: 1;
     }
 }
-/* Apply the fade-in animation to the text */
+
 .fade-in-text {
-    opacity: 0; /* Start with the text hidden */
-    animation: fadeIn 3s forwards; /* 2s is the duration of the fade-in effect */
+    opacity: 0;
+    animation: fadeIn 3s forwards;
 }
-/* New class to reset the fade-in animation */
+
 .fade-in-text.reset-animation {
     animation: none;
 }
@@ -71,39 +61,25 @@
     padding: 20px;
     border-radius: 5px;
 }
+
 .logo {
     display: block;
     margin-top: -30px;
 }
+
 .logo a {
     margin: auto;
 }
+
 .navbar-nav {
     margin-top: 25px;
     font-size: 1.3rem;
 }
+
 .navbar-nav a {
     color: #000;
 }
-#nudging {
-    position: relative;
-    overflow: hidden;
-    height: 70vh; /* Adjust based on your design */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-#dashboard {
-    background: url('./img/dashboard.png') no-repeat center center;
-    background-size: cover;
-    color: white;
-    height: 900px;
-}
-#dashboard h2 {
-    color: #000;
-}
+
 #cta-button {
     position: absolute;
     top: 500px;
@@ -112,20 +88,22 @@
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    border-color: 1px solid #888;
-}   
+    border: 1px solid #888;
+}
+
 /* Modal styles */
 .video-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 1000; /* Sit on top */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 .video-modal-content {
     position: relative;
     margin: auto;
@@ -135,6 +113,7 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
 .video-modal-content video {
     width: 100%;
     height: auto;
@@ -149,6 +128,7 @@
     font-weight: bold;
     cursor: pointer;
 }
+
 .close-button:hover,
 .close-button:focus {
     color: #bbb;
@@ -247,7 +227,6 @@
     border-radius: 5px;
     background: rgba(128, 128, 128, 0.6);
 }
-/* Lägg till dessa stilar i din CSS-fil */
 
 /* iPad-liknande skärm med skuggning */
 .content.tablet {
@@ -258,48 +237,106 @@
     max-width: 800px;
     margin: 20px auto;
     position: relative;
-    
 }
+
 #watt .content {
     margin-left: 10%;
 }
+
 #watt .tablet {
     margin-left: 30%;
 }
+
 #watt .text {
     margin-right: 20%;
 }
 
+@media (max-width: 1200px) {
+    .hero-bg {
+        height: 500px;
+    }
+
+    #cta-button {
+        top: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-bg {
+        height: 450px;
+    }
+
+    #cta-button {
+        top: 400px;
+    }
+
+    .typewriter-container {
+        font-size: 2rem;
+    }
+}
 
 @media (max-width: 768px) {
     .hero-bg {
         height: auto;
         padding: 60px 0;
     }
+
     #watt, #hero {
         height: auto;
         padding: 60px 0;
     }
+
     #nudging {
         height: auto;
         padding: 0;
         flex-direction: column;
         height: 350px;
     }
+
     #nudging h2 {
         font-size: medium;
     }
+
     #nudging .content {
         max-width: 100%;
         top: -130px;
         height: 95px;
         font-size: small;
     }
+
     #cta-button {
         top: 340px;
-
     }
-    #header  {
+
+    #header {
         height: 450px;
+    }
+
+    .typewriter-container {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-bg {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    #cta-button {
+        top: 300px;
+    }
+
+    .typewriter-container {
+        font-size: 1.5rem;
+    }
+
+    .content,
+    #contact {
+        padding: 10px;
+    }
+
+    .video-modal-content {
+        width: 90%;
     }
 }
