@@ -106,7 +106,7 @@
 }
 #cta-button {
     position: absolute;
-    top: 535px;
+    top: 500px;
     background: #19e8d9;
     color: #000;
     padding: 10px 20px;
@@ -294,5 +294,12 @@
         top: -130px;
         height: 95px;
         font-size: small;
+    }
+    #cta-button {
+        top: 340px;
+
+    }
+    #header  {
+        height: 350px;
     }
 }
