@@ -175,7 +175,15 @@
     height: 30px;
     z-index: 2;
 }
-
+#dashboard {
+    background: url('./img/dashboard.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #watt {
     position: relative;
     overflow: hidden;
