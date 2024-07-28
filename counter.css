@@ -10,15 +10,12 @@
     padding: 20px;
 }
 
-
-
 #counter {
     position: relative;
     overflow: hidden;
     height: 600px;
 
 }
-
 
 #counter .content {
     position: relative;
