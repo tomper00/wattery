@@ -90,6 +90,14 @@
     text-decoration: none;
     border: 1px solid #888;
 }
+#roi-button {
+    background: #19e8d9;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid #888;
+}
 
 /* Modal styles */
 .video-modal {
