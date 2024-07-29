@@ -32,8 +32,7 @@
         <div class="video-modal-content">
             <span class="close-button">&times;</span>
             <video controls>
-                <source src="video/wattery3-small.mp4"
-                    type="video/mp4">
+                <source src="video/wattery3-small.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         </div>
@@ -160,43 +159,35 @@
             </div>
         </div>
     </section>
-    <section id="savings">
-        <div class="content">
-            <div class="container">
-                <h2>THE SAVINGS ISN'T JUST GOOD PR... IT PAYS FOR ITSELF</h2>
+    <section id="savings" class="container">
+        <h2>THE SAVINGS ISN'T JUST GOOD PR... IT PAYS FOR ITSELF</h2>
+        <div class="row align-items-center">
+            <div class="col-6">
+                <h3>Water savings</h3>
+                <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background circle with gray border -->
+                    <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
+                    <!-- Foreground circle with orange border representing 15% -->
+                    <path d="M100,10 A90,90 0 0,1 182.63,117.37" stroke="orange" stroke-width="10" fill="none" />
+                    <!-- Text displaying 15% in white in the middle -->
+                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">15%</text>
+                </svg>
+                <p>Savings this month: <span>504 $</span></p>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>Water savings</h3>
-                        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background circle with gray border -->
-                            <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
-                            <!-- Foreground circle with orange border representing 15% -->
-                            <path d="M100,10 A90,90 0 0,1 182.63,117.37" stroke="orange" stroke-width="10"
-                                fill="none" />
-                            <!-- Text displaying 15% in white in the middle -->
-                            <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">15%</text>
-                        </svg>
-                        <p>Savings this month: <span>504 $</span></p>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Electricity savings</h3>
-                        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background circle with gray border -->
-                            <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
-                            <!-- Foreground circle with orange border representing 22% -->
-                            <path d="M100,10 A90,90 0 0,1 185.93,137.05" stroke="orange" stroke-width="10"
-                                fill="none" />
-                            <!-- Text displaying 22% in white in the middle -->
-                            <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">22%</text>
-                        </svg>
-                        <p>Savings this month: <span>708 $</span></p>
-                    </div>
-                </div>
-                <button id="roi-button" class="btn-lg btn-primary mt-4">ROI Calculator</button>
-
+            <div class="col-6">
+                <h3>Electricity savings</h3>
+                <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background circle with gray border -->
+                    <circle cx="100" cy="100" r="90" stroke="#ccc" stroke-width="10" fill="black" />
+                    <!-- Foreground circle with orange border representing 22% -->
+                    <path d="M100,10 A90,90 0 0,1 185.93,137.05" stroke="orange" stroke-width="10" fill="none" />
+                    <!-- Text displaying 22% in white in the middle -->
+                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" dy=".3em">22%</text>
+                </svg>
+                <p>Savings this month: <span>708 $</span></p>
             </div>
+        </div>
+        <button id="roi-button" class="btn-lg btn-primary mt-4">ROI Calculator</button>
     </section>
     <section id="dashboard">
         <div class="content">
@@ -207,23 +198,24 @@
     </section>
     <section id="easy">
         <div class="content">
-                <h2>Install in seconds</h2>
+            <h2>Install in seconds</h2>
             <div class="row">
                 <div class="col-6">
-                    <img src="img/BB-Install-Final-v05-min.gif" class="img-fluid"> 
+                    <img src="img/BB-Install-Final-v05-min.gif" class="img-fluid">
                 </div>
                 <div class="col-6">
-                    <img src="img/bluebot-universal-flow-meter-pipe-size.webp" class="img-fluid"> 
+                    <img src="img/bluebot-universal-flow-meter-pipe-size.webp" class="img-fluid">
                     <p>Fits on 80 different pipes sizes</p>
                 </div>
-                </div>
-            </div>            
+            </div>
+        </div>
     </section>
     <section id="hero">
         <div class="content">
             <div class="container">
                 <h2>HouseKeeping Hero</h2>
-                <p>Keep guest and housekeeping water usage  separate. And make sure the cleaning staff is also practicing sustainable behavior</p>
+                <p>Keep guest and housekeeping water usage separate. And make sure the cleaning staff is also practicing
+                    sustainable behavior</p>
             </div>
         </div>
     </section>
