@@ -149,6 +149,7 @@
     color: white;
     background: gray;
     max-width: 100%;
+    padding: 20px;
 }
 
 #nudging video {
