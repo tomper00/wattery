@@ -148,6 +148,7 @@
     background-size: cover;
     color: white;
     background: gray;
+    max-width: 100%;
 }
 
 #nudging video {
