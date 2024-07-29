@@ -292,7 +292,7 @@ h2,h1,h3 {
 
 @media (max-width: 1200px) {
     .hero-bg {
-        height: 500px;
+        height: 550px;
     }
 
     #cta-button {
@@ -302,11 +302,11 @@ h2,h1,h3 {
 
 @media (max-width: 992px) {
     .hero-bg {
-        height: 450px;
+        height: 470px;
     }
 
     #cta-button {
-        top: 400px;
+        top: 360px;
     }
 
     .typewriter-container {
