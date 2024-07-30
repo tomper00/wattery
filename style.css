@@ -1,3 +1,11 @@
+.navbar-toggle {
+    display: block;
+}
+
+.navbar-collapse.collapse {
+    display: none !important;
+}
+
 /* General Styles */
 .content,
 #contact {
