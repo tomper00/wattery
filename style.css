@@ -317,7 +317,7 @@ h2,h1,h3 {
 
 @media (max-width: 768px) {
     .hero-bg {
-        height: 540;
+        height: 540px;
         padding: 60px 0;
     }
 
