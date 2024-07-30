@@ -54,6 +54,7 @@ h2,h1,h3 {
 .fade-in-text {
     opacity: 0;
     animation: fadeIn 3s forwards;
+    text-wrap: pretty;
 }
 
 .fade-in-text.reset-animation {
@@ -316,7 +317,7 @@ h2,h1,h3 {
 
 @media (max-width: 768px) {
     .hero-bg {
-        height: auto;
+        height: 540;
         padding: 60px 0;
     }
 
@@ -344,7 +345,7 @@ h2,h1,h3 {
     }
 
     #cta-button {
-        top: 340px;
+        top: 440px;
     }
 
     #header {
@@ -358,12 +359,15 @@ h2,h1,h3 {
 
 @media (max-width: 576px) {
     .hero-bg {
-        height: auto;
+        height: 550px;
         padding: 40px 0;
+    }
+    .fade-in-text {
+        font-size: small;
     }
 
     #cta-button {
-        top: 300px;
+        top: 450px;
     }
 
     .typewriter-container {
