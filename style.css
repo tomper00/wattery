@@ -302,7 +302,7 @@ h2,h1,h3 {
 
 @media (max-width: 992px) {
     .hero-bg {
-        height: 470px;
+        height: 520px;
     }
 
     #cta-button {
