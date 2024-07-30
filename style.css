@@ -1,9 +1,9 @@
 .navbar-toggle {
-    display: block;
+    display: none !important;
 }
 
 .navbar-collapse.collapse {
-    display: none !important;
+    display: block !important;
 }
 
 /* General Styles */
