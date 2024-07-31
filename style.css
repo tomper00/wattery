@@ -1,4 +1,4 @@
-#menu .navbar-toggle {
+#menu .navbar-toggler {
     display: none !important;
 }
 
@@ -328,6 +328,14 @@ h2,h1,h3 {
     .typewriter-container {
         font-size: 2rem;
     }
+    .navbar-nav .nav-link {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .navbar-nav {
+        margin-top: 25px;
+        font-size: 1.0rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -371,14 +379,7 @@ h2,h1,h3 {
         font-size: 1.8rem;
     }
 
-    .navbar-nav .nav-link {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-    .navbar-nav {
-        margin-top: 25px;
-        font-size: 1.0rem;
-    }
+ 
 }
 
 @media (max-width: 576px) {
