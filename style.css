@@ -331,7 +331,7 @@ h2,h1,h3 {
     .typewriter-container {
         font-size: 2rem;
     }
-    .navbar-nav .nav-link {
+    #menu .navbar-nav .nav-link {
         padding-right: 10px;
         padding-left: 10px;
     }
