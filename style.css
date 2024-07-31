@@ -6,6 +6,13 @@
     display: flex !important;
 }
 
+.navbar-collapse.collapse .navbar-nav {
+        -ms-flex-direction: row !important;
+        flex-direction: row !important;
+}
+
+
+
 /* General Styles */
 .content,
 #contact {
@@ -362,6 +369,15 @@ h2,h1,h3 {
 
     .typewriter-container {
         font-size: 1.8rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .navbar-nav {
+        margin-top: 25px;
+        font-size: 1.0rem;
     }
 }
 
