@@ -115,20 +115,18 @@ h2,h1,h3 {
 #cta-button {
     position: absolute;
     top: 500px;
-    background: #19e8d9;
-    color: #000;
+    background: #148ef3;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    border: 1px solid #888;
 }
 #roi-button {
-    background: #19e8d9;
-    color: #000;
+    background: #148ef3;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    border: 1px solid #888;
     margin: auto
 }
 
