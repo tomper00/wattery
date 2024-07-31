@@ -3,7 +3,7 @@
 }
 
 .navbar-collapse.collapse {
-    display: block !important;
+    display: flex !important;
 }
 
 /* General Styles */
