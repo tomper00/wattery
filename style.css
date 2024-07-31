@@ -11,9 +11,10 @@
         flex-direction: row !important;
 }
 
-.navbar-nav .nav-link {
-    padding-right: 30px;
-    padding-left: 30px;
+#menu .navbar-nav .nav-link {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+    color: #148ef3;
 }
 
 
